@@ -57,19 +57,19 @@ class MemeGenerator extends Component {
   }
 
   givenInput = event => {
-    this.setState({inputImageValue: event.target.value})
+    this.setState({inputImageValue: event.target.value, generate: false})
   }
 
   givenTopText = event => {
-    this.setState({inputTopText: event.target.value})
+    this.setState({inputTopText: event.target.value, generate: false})
   }
 
   givenBottomText = event => {
-    this.setState({inputBottomText: event.target.value})
+    this.setState({inputBottomText: event.target.value, generate: false})
   }
 
   ChangeFontSize = event => {
-    this.setState({fontSize: event.target.value})
+    this.setState({fontSize: event.target.value, generate: false})
   }
 
   render() {
@@ -119,16 +119,18 @@ class MemeGenerator extends Component {
             <label htmlFor="imageUrl">Image URL</label>
             <br />
             <input
+              value={inputImageValue}
               placeholder="Enter a image URL"
               onChange={this.givenInput}
               type="text"
-              id="imageURL"
+              id="imageUrl"
             />
             <br />
             <br />
             <label htmlFor="topText">Top Text</label>
             <br />
             <input
+              value={inputTopText}
               placeholder="Enter a Top Text"
               onChange={this.givenTopText}
               type="text"
@@ -139,6 +141,7 @@ class MemeGenerator extends Component {
             <label htmlFor="bottomText">Bottom Text</label>
             <br />
             <input
+              value={inputBottomText}
               placeholder="Enter a Bottom Text"
               onChange={this.givenBottomText}
               type="text"
